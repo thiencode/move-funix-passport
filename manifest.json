@@ -1,0 +1,42 @@
+{
+    "manifest_version": 3,
+    "name": "Move Subtitles",
+    "description": "Move Funix Passport Coursera VietNamese Subtitles Extention",
+    "version": "1.0.0",
+    "action": {
+        "default_popup": "src/popup.html",
+        "default_icon": {
+            "16": "src/flags/png-clipart-vietnam-flag-vietnam-flag-wave-objects-flags-thumbnail.png",
+            "32": "src/flags/png-clipart-vietnam-flag-vietnam-flag-wave-objects-flags-thumbnail.png",
+            "48": "src/flags/png-clipart-vietnam-flag-vietnam-flag-wave-objects-flags-thumbnail.png",
+            "128": "src/flags/png-clipart-vietnam-flag-vietnam-flag-wave-objects-flags-thumbnail.png"
+        }
+    },
+    "icons": {
+        "16": "src/flags/png-clipart-vietnam-flag-vietnam-flag-wave-objects-flags-thumbnail.png",
+        "32": "src/flags/png-clipart-vietnam-flag-vietnam-flag-wave-objects-flags-thumbnail.png",
+        "48": "src/flags/png-clipart-vietnam-flag-vietnam-flag-wave-objects-flags-thumbnail.png",
+        "128": "src/flags/png-clipart-vietnam-flag-vietnam-flag-wave-objects-flags-thumbnail.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.coursera.org/*"
+            ],
+            "js": [
+                "src/background.js"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "src/background.js"
+    },
+    "permissions": [
+        "tabs",
+        "storage",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "*://www.coursera.org/*"
+    ]
+}
